@@ -15,6 +15,7 @@ body {
 .logo svg {
   fill: var(--font-color);
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -24,12 +25,11 @@ body {
 .name {
   font-family: 'Estonia', sans-serif;
   padding-bottom: 20px;
-}
-
-.name span {
   font-size: 4em;
   line-height: .75em;
-  display: block;
+  text-align: center;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .info {
