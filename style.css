@@ -29,6 +29,7 @@ body {
 .name span {
   font-size: 4em;
   line-height: .75em;
+  display: block;
 }
 
 .info {
