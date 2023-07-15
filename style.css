@@ -23,7 +23,7 @@ body {
 
 .name {
   font-family: 'Estonia', sans-serif;
-  padding-bottom: 20px;
+  margin-bottom: .5em;
   font-size: 4em;
   line-height: .75em;
   text-align: center;
@@ -42,14 +42,14 @@ body {
   height: .25em;
   background-color: var(--font-color);
   width:75vw;
-  margin-bottom: 2em;
+  margin-bottom: .5em;
   margin-top: 1em;
 }
 
 .description {
   font-family: 'Estonia', sans-serif;
   font-size: 2.5em;
-  margin-bottom: 1.25em;
+  margin-bottom: 25px;
 }
 
 .link {
@@ -58,10 +58,34 @@ body {
   font-family: 'Estonia', sans-serif;
   font-size: 2.5em;
   color: #444;
+  text-decoration: none;
+}
+
+.link-container {
+  border: 2px solid white;
+  transition: border-color .5s;
+  border-radius: 1px;
+}
+
+.link-container:hover {
+  border-color: var(--font-color);
+  cursor: pointer;
 }
 
 .icon {
   width: 1em;
   height: 1em;
   margin-right: .25em;
+  fill: var(--font-color);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  max-width: 75vw;
+  justify-content: space-between;
+}
+
+.links link {
+  margin-bottom: .125em;
 }
