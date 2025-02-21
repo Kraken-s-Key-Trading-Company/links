@@ -24,7 +24,7 @@ body {
 .name {
   font-family: 'Estonia', sans-serif;
   margin-bottom: .5em;
-  font-size: 4em;
+  font-size: 3.5em;
   line-height: .75em;
   text-align: center;
   padding-left: 0.5em;
@@ -48,8 +48,11 @@ body {
 
 .description {
   font-family: 'Estonia', sans-serif;
-  font-size: 2.5em;
+  font-size: 2em;
   margin-bottom: 25px;
+  text-align: center;
+  padding-right: 2em;
+  padding-left: 2em;
 }
 
 .link {
