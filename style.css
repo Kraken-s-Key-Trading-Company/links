@@ -22,19 +22,14 @@ body {
 }
 
 .name {
-  font-family: 'Estonia', sans-serif;
-  margin-bottom: .5em;
-  font-size: 3.5em;
-  line-height: .75em;
-  text-align: center;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  fill: var(--font-color);
 }
 
 .info {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1em;
 }
 
 .divider {
@@ -42,7 +37,7 @@ body {
   height: .25em;
   background-color: var(--font-color);
   width:75vw;
-  margin-bottom: .5em;
+  margin-bottom: 1em;
   margin-top: 1em;
 }
 
@@ -91,4 +86,36 @@ body {
 
 .links link {
   margin-bottom: .125em;
+}
+
+.svg-title {
+  height: .6em;
+  width: auto;
+  fill: var(--font-color);
+}
+
+.svg-desc {
+  height: 1.25em;
+  width: auto;
+  fill: var(--font-color);
+}
+
+.description-small-screen {
+  display: none;
+}
+
+.svg-desc-small-screen {
+  height: 3em;
+  width: auto;
+  fill: var(--font-color);
+}
+
+@media screen and (max-width: 960px) {
+  .description-large-screen {
+    display: none;
+  }
+
+  .description-small-screen {
+    display: initial;
+  }
 }
