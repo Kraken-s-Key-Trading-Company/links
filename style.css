@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Sabatons Stamp';
+  src: url('fonts/sabatons-stamp-subset.woff2') format('woff2');
+  font-display: swap;
+}
+
 :root {
   --paper: #e9e1d4;
   --ink: #1c1a18;
@@ -52,7 +58,30 @@ body {
 }
 
 .name {
+  margin: 0;
+  font-size: inherit;
   fill: var(--font-color);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.tagline {
+  margin: 0;
+  font-family: "Sabatons Stamp", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--font-color);
 }
 
 .info {
@@ -101,6 +130,16 @@ body {
     transform .2s ease;
 }
 
+.inverse {
+  color: var(--paper);
+  background-color: var(--ink);
+}
+
+.label {
+  font-family: 'Sabatons Stamp', sans-serif;
+  line-height: 1;
+}
+
 /* Trailing arrow, drawn with a mask so it follows --font-color */
 .link::after {
   content: "";
@@ -112,6 +151,10 @@ body {
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8.6 16.6 13.2 12 8.6 7.4 10 6l6 6-6 6z'/%3E%3C/svg%3E") center / contain no-repeat;
   opacity: .55;
   transition: opacity .2s ease, transform .2s ease;
+}
+
+.link.inverse::after {
+  background-color: var(--paper);
 }
 
 /* Hover/focus inverts the card; every SVG fill follows --font-color */
@@ -157,43 +200,19 @@ body {
   margin-top: .75rem;
 }
 
-.svg-title {
-  height: .6em;
-  width: auto;
-  fill: var(--font-color);
-}
-
-.svg-desc {
-  height: 1.25em;
-  width: auto;
-  fill: var(--font-color);
-}
-
-.description-small-screen {
-  display: none;
-}
-
-.svg-desc-small-screen {
-  height: 3em;
-  width: auto;
-  fill: var(--font-color);
-}
-
 /* Gentle staggered entrance */
 @media (prefers-reduced-motion: no-preference) {
   .logo,
   .divider,
   .name,
-  .description-large-screen,
-  .description-small-screen,
+  .tagline,
   .link {
     animation: rise .6s cubic-bezier(.2, .7, .3, 1) backwards;
   }
 
   .divider { animation-delay: .08s; }
   .name { animation-delay: .14s; }
-  .description-large-screen,
-  .description-small-screen { animation-delay: .2s; }
+  .tagline { animation-delay: .2s; }
   .link:nth-child(1) { animation-delay: .26s; }
   .link:nth-child(2) { animation-delay: .31s; }
   .link:nth-child(3) { animation-delay: .36s; }
@@ -205,15 +224,5 @@ body {
   from {
     opacity: 0;
     transform: translateY(8px);
-  }
-}
-
-@media screen and (max-width: 960px) {
-  .description-large-screen {
-    display: none;
-  }
-
-  .description-small-screen {
-    display: block;
   }
 }
